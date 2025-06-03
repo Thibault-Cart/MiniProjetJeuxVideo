@@ -442,8 +442,8 @@
     <access>Native</access>
     <database>XE</database>
     <port>1521</port>
-    <username>system</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce73d293bcc9</password>
+    <username>SYSTEM</username>
+    <password>Encrypted 2be98afc86aa7f297be10bd63dbc0ff8a</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -503,21 +503,21 @@
     </hop>
     <hop>
       <from>Sort rows</from>
-      <to>Unique rows</to>
+      <to>Unique rows genre</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Unique rows</from>
+      <from>Unique rows genre</from>
       <to>Add gen_id</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Sort rows 2</from>
-      <to>Unique rows 2</to>
+      <to>Unique rows plateform</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Unique rows 2</from>
+      <from>Unique rows plateform</from>
       <to>Add plat_id</to>
       <enabled>Y</enabled>
     </hop>
@@ -533,11 +533,11 @@
     </hop>
     <hop>
       <from>Sort rows 2 2</from>
-      <to>Unique rows 2 2</to>
+      <to>Unique publisher</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Unique rows 2 2</from>
+      <from>Unique publisher</from>
       <to>Add pub_id</to>
       <enabled>Y</enabled>
     </hop>
@@ -552,7 +552,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Unique rows 2 2 2</from>
+      <from>Unique rows games</from>
       <to>Add gam_id</to>
       <enabled>Y</enabled>
     </hop>
@@ -563,7 +563,7 @@
     </hop>
     <hop>
       <from>Sort genre</from>
-      <to>Merge join</to>
+      <to>Join genre</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -573,41 +573,41 @@
     </hop>
     <hop>
       <from>Add gen_id</from>
-      <to>Merge join</to>
+      <to>Join genre</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Sort platform</from>
-      <to>Merge join 2</to>
+      <to>Join plateforme</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Merge join</from>
+      <from>Join genre</from>
       <to>Sort platform</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Add plat_id</from>
-      <to>Merge join 2</to>
+      <to>Join plateforme</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Sort publisher</from>
-      <to>Merge join 2 2</to>
+      <to>Join publisher</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Merge join 2</from>
+      <from>Join plateforme</from>
       <to>Sort publisher</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Add pub_id</from>
-      <to>Merge join 2 2</to>
+      <to>Join publisher</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Merge join 2 2</from>
+      <from>Join publisher</from>
       <to>delete .00 dans date</to>
       <enabled>Y</enabled>
     </hop>
@@ -618,7 +618,7 @@
     </hop>
     <hop>
       <from>Sort rows 3</from>
-      <to>Unique rows 3</to>
+      <to>Unique region</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -628,11 +628,11 @@
     </hop>
     <hop>
       <from>CSV file input</from>
-      <to>Select values</to>
+      <to>Select regions</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Select values</from>
+      <from>Select regions</from>
       <to>Row normaliser 2</to>
       <enabled>Y</enabled>
     </hop>
@@ -643,7 +643,7 @@
     </hop>
     <hop>
       <from>add reg_id</from>
-      <to>Merge join 3</to>
+      <to>Join region</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -653,16 +653,16 @@
     </hop>
     <hop>
       <from>Sort region</from>
-      <to>Merge join 3</to>
+      <to>Join region</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Merge join 3</from>
+      <from>Join region</from>
       <to>sort game</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Unique rows 3</from>
+      <from>Unique region</from>
       <to>Select values 2</to>
       <enabled>Y</enabled>
     </hop>
@@ -673,7 +673,7 @@
     </hop>
     <hop>
       <from>sort game</from>
-      <to>Merge join 4</to>
+      <to>Join game</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -683,7 +683,7 @@
     </hop>
     <hop>
       <from>Sort rows 4</from>
-      <to>Merge join 4</to>
+      <to>Join game</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -712,7 +712,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Merge join 4</from>
+      <from>Join game</from>
       <to>Add sequence</to>
       <enabled>Y</enabled>
     </hop>
@@ -738,7 +738,7 @@
     </hop>
     <hop>
       <from>Value mapper 2</from>
-      <to>Unique rows 2 2 2</to>
+      <to>Unique rows games</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -772,7 +772,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>832</xloc>
+      <xloc>800</xloc>
       <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>
@@ -928,7 +928,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:/ValorisationDonnees/vgsales.csv</filename>
+    <filename>C:/Users/thiba/OneDrive - HESSO/Annee_3/Semestre2/ValorisationDesDonnées/MiniProjetJeuxVideo/MiniProjetJeuxVideo/vgsales.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -1074,13 +1074,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>160</xloc>
+      <xloc>128</xloc>
       <yloc>480</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Merge join</name>
+    <name>Join genre</name>
     <type>MergeJoin</type>
     <description/>
     <distribute>Y</distribute>
@@ -1108,13 +1108,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1024</xloc>
-      <yloc>320</yloc>
+      <xloc>992</xloc>
+      <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Merge join 2</name>
+    <name>Join plateforme</name>
     <type>MergeJoin</type>
     <description/>
     <distribute>Y</distribute>
@@ -1148,7 +1148,7 @@
     </GUI>
   </step>
   <step>
-    <name>Merge join 2 2</name>
+    <name>Join publisher</name>
     <type>MergeJoin</type>
     <description/>
     <distribute>Y</distribute>
@@ -1182,7 +1182,7 @@
     </GUI>
   </step>
   <step>
-    <name>Merge join 3</name>
+    <name>Join region</name>
     <type>MergeJoin</type>
     <description/>
     <distribute>Y</distribute>
@@ -1216,7 +1216,7 @@
     </GUI>
   </step>
   <step>
-    <name>Merge join 4</name>
+    <name>Join game</name>
     <type>MergeJoin</type>
     <description/>
     <distribute>Y</distribute>
@@ -1276,7 +1276,7 @@
     <accept_field/>
     <accept_stepname/>
     <file>
-      <name>C:/ValorisationDonnees/vgsales.xls</name>
+      <name>C:/Users/thiba/OneDrive - HESSO/Annee_3/Semestre2/ValorisationDesDonnées/MiniProjetJeuxVideo/MiniProjetJeuxVideo/vgsales.xls</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -1752,7 +1752,7 @@
     </GUI>
   </step>
   <step>
-    <name>Select values</name>
+    <name>Select regions</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -1765,15 +1765,19 @@
     <fields>
       <field>
         <name>NA_Sales</name>
+        <rename/>
       </field>
       <field>
         <name>EU_Sales</name>
+        <rename/>
       </field>
       <field>
         <name>JP_Sales</name>
+        <rename/>
       </field>
       <field>
         <name>Other_Sales</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -1863,8 +1867,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>928</xloc>
-      <yloc>320</yloc>
+      <xloc>896</xloc>
+      <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2651,6 +2655,10 @@
         <column_name>gam_id</column_name>
         <stream_name>gam_id</stream_name>
       </field>
+      <field>
+        <column_name>sal_id</column_name>
+        <stream_name>sale_id</stream_name>
+      </field>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -2667,7 +2675,7 @@
     </GUI>
   </step>
   <step>
-    <name>Unique rows</name>
+    <name>Unique rows genre</name>
     <type>Unique</type>
     <description/>
     <distribute>Y</distribute>
@@ -2696,13 +2704,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>688</xloc>
+      <xloc>768</xloc>
       <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Unique rows 2</name>
+    <name>Unique rows plateform</name>
     <type>Unique</type>
     <description/>
     <distribute>Y</distribute>
@@ -2737,7 +2745,7 @@
     </GUI>
   </step>
   <step>
-    <name>Unique rows 2 2</name>
+    <name>Unique publisher</name>
     <type>Unique</type>
     <description/>
     <distribute>Y</distribute>
@@ -2766,13 +2774,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>688</xloc>
+      <xloc>720</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Unique rows 2 2 2</name>
+    <name>Unique rows games</name>
     <type>Unique</type>
     <description/>
     <distribute>Y</distribute>
@@ -2847,7 +2855,7 @@
     </GUI>
   </step>
   <step>
-    <name>Unique rows 3</name>
+    <name>Unique region</name>
     <type>Unique</type>
     <description/>
     <distribute>N</distribute>
@@ -2897,7 +2905,7 @@
     <non_match_default/>
     <fields>
       <field>
-        <source_value>2600,0</source_value>
+        <source_value>2600.0</source_value>
         <target_value>Atari 2600</target_value>
       </field>
     </fields>
